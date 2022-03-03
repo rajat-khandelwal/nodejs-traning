@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title> Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .container {
+            margin-top: 100px;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Shoping Items</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < data.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= data[i].name %>
+                        </td>
+                        <td>
+                            <%= data[i].address %>
+                        </td>
+                        <td>
+                            <%= data[i].email %>
+                        </td>
+                        <td>
+                            <%= data[i].shopingItem %>  
+                        </td>
+                        <td>
+                            <%= data[i].Status %>  
+                        </td>
+<td><a style="cursor: pointer;" href="/SendMail">send email</a></td>
+                    </tr>
+                    <% } %>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<%- include('./Header'); %>
+    <div class="container">
+        <table class="table" id="mytable">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date/Time</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% var count = 1;
+                for(var i=0; i < data.length; i++) { %>
+                    <tr>
+
+                        <td>
+                            <%= count++ %>
+                        </td>
+                        <td>
+                            <%= data[i].title %>
+                        </td>
+                        <td>
+                            <%= data[i].description %>
+                        </td>
+                       
+                        <td>
+                            <%= new Date(data[i].createdDate).toLocaleString() %>  
+                        </td>
+
+                        <td>
+                            <div class="float-right" style="text-align:end">
+                                <button type="button"  class="btn btn-danger">Delete</button>
+                                <a href="/news/add-news/<%=data[i]._id%>" type="button" class="btn btn-primary">Edit</a>
+                            </div>
+                        </td>
+                    </tr>
+                  
+                    <% } %>
+
+            </tbody>
+         
+        </table>
+    </div>
+
+
+    <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            var mytable = "#mytable";
+
+            setTimeout(function () {
+
+                $(mytable).dataTable();
+            }, 3000);
+
+            setTimeout(() => {
+                $('#yourtable').dataTable({
+                    // datatables customization options
+                });
+            }, 100)
+
+
+        })
+    </script>
+    <%- include('./Footer'); %>

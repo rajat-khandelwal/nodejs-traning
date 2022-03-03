@@ -1,0 +1,29 @@
+
+[
+    {  "id":1,
+       "empDetails":{
+            "Name": "max",
+           "Role":"developer",
+            "Salary":"",
+        "projectId":"PRJ1"
+       }     
+    },
+    {  "id":2,
+        "empDetails":{
+             "Name": "david",
+            "Role":"tester",
+             "Salary":"",
+         "projectId":"PRJ2"
+        }     
+     },
+     {  "id":3,
+        "empDetails":{
+             "Name": "maria",
+            "Role":"developer",
+             "Salary":"",
+         "projectId":"PRJ3"
+        }     
+     }
+    
+]
+   
